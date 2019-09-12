@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.692" />
 
     <Button
-        android:id="@+id/salvarJogador"
+        android:id="@+id/salvarJogadorBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salvar"
@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.878" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/nomeJogador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -57,7 +57,7 @@
         app:layout_constraintVertical_bias="0.287" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/apelidoJogador"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.428" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/numeroCamiseta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
