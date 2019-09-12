@@ -60,4 +60,26 @@ public class JogadorDAO {
         return listaJogadores;
     }
 
+    public static Jogador getJogadorId(Context contexto, int idJogador){
+        Banco banco = new Banco(contexto);
+        SQLiteDatabase db = banco.getReadableDatabase();
+
+        String sql = "SELECT * FROM jogadores WHERE id = " + idJogador;
+        Cursor cursor = db.rawQuery( sql ,null);
+
+        if ( cursor.getCount() > 0 ){
+            cursor.moveToFirst();
+
+            Jogador jogador = new Jogador();
+            jogador.setId(  cursor.getInt( 0 ) );
+            jogador.setNome( cursor.getString( 1 ) );
+            jogador.setApelido( cursor.getString( 1 ) );
+            jogador.setNumeroCamiseta( cursor.getInt(   0 ) );
+
+            return jogador;
+        }else {
+            return null;
+        }
+    }
+
 }
