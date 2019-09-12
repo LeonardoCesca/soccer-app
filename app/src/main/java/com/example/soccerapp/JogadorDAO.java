@@ -28,7 +28,13 @@ public class JogadorDAO {
         valoresCampos.put("apelido", jogador.getApelido());
         valoresCampos.put("numCamiseta", jogador.getNumeroCamiseta());
 
-        database.update("jogadores", valoresCampos, " id = " + produto.getId(), null);
+        database.update("jogadores", valoresCampos, " id = " + jogador.getId(), null);
+    }
+
+    public static void excluirJogador(Context contexto, int idJogador){
+        Banco banco = new Banco(contexto);
+        SQLiteDatabase db = banco.getWritableDatabase();
+        db.delete("jogadores", " id = " + idJogador,null);
     }
 
 }
