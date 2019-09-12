@@ -5,6 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class JogadorDAO {
 
     public static void inserirJogador(Context contexto, Jogador jogador) {
@@ -35,6 +38,26 @@ public class JogadorDAO {
         Banco banco = new Banco(contexto);
         SQLiteDatabase db = banco.getWritableDatabase();
         db.delete("jogadores", " id = " + idJogador,null);
+    }
+
+    public static List<Jogador> getJogadores(Context contexto){
+        List<Jogador> listaJogadores = new ArrayList<>();
+        Banco banco = new Banco(contexto);
+        SQLiteDatabase db = banco.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM jogadores ORDER BY nome",null);
+        if ( cursor.getCount() > 0 ){
+            cursor.moveToFirst();
+            do{
+                Jogador jogador = new Jogador();
+                jogador.setId(  cursor.getInt( 0 ) );
+                jogador.setNome( cursor.getString( 1 ) );
+                jogador.setApelido( cursor.getString( 1 ) );
+                jogador.setNumeroCamiseta( cursor.getInt(   0 ) );
+                listaJogadores.add( jogador );
+            } while ( cursor.moveToNext() );
+        }
+        return listaJogadores;
     }
 
 }
