@@ -11,7 +11,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     private Button criarJogadorBtn;
-
+    private Button criarTimeBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +27,17 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        criarTimeBtn = (Button) findViewById(R.id.criarTimeBtn);
+
+        criarTimeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, TeamActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
+
 }
