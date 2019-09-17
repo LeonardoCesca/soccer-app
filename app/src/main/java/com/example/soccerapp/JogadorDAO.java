@@ -53,7 +53,7 @@ public class JogadorDAO {
                 jogador.setId(  cursor.getInt( 0 ) );
                 jogador.setNome( cursor.getString( 1 ) );
                 jogador.setApelido( cursor.getString( 1 ) );
-                jogador.setNumeroCamiseta( cursor.getInt(   0 ) );
+                jogador.setNumeroCamiseta( cursor.getString(   1) );
                 listaJogadores.add( jogador );
             } while ( cursor.moveToNext() );
         }
@@ -74,7 +74,7 @@ public class JogadorDAO {
             jogador.setId(  cursor.getInt( 0 ) );
             jogador.setNome( cursor.getString( 1 ) );
             jogador.setApelido( cursor.getString( 1 ) );
-            jogador.setNumeroCamiseta( cursor.getInt(   0 ) );
+            jogador.setNumeroCamiseta( cursor.getString(   1 ) );
 
             return jogador;
         }else {

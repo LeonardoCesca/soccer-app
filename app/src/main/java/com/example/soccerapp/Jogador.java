@@ -5,7 +5,7 @@ public class Jogador {
     private int id;
     private String nome;
     private String apelido;
-    private int numeroCamiseta;
+    private String numeroCamiseta;
 
 
     public int getId() {
@@ -32,11 +32,11 @@ public class Jogador {
         this.apelido = apelido;
     }
 
-    public int getNumeroCamiseta() {
+    public String getNumeroCamiseta() {
         return numeroCamiseta;
     }
 
-    public void setNumeroCamiseta(int numeroCamiseta) {
+    public void setNumeroCamiseta(String numeroCamiseta) {
         this.numeroCamiseta = numeroCamiseta;
     }
 }

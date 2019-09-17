@@ -41,6 +41,16 @@ public class PlayerActivity extends AppCompatActivity {
         String nomeJogador = edtNome.getText().toString();
         String apelidoJogador = edtApelido.getText().toString();
         String numCamiseta = edtNumCamiseta.getText().toString();
+
+        Jogador jogador = new Jogador();
+        jogador.setNome(nomeJogador);
+        jogador.setApelido(apelidoJogador);
+        jogador.setNumeroCamiseta(numCamiseta);
+
+        JogadorDAO.inserirJogador(this, jogador);
+
+        this.finish();
+
     }
 
     @Override
