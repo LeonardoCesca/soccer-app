@@ -1,5 +1,6 @@
 package com.example.soccerapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.view.MenuItem;
 
-public class TeamActivity extends AppCompatActivity {
+public class  TeamActivity extends AppCompatActivity {
 
     private EditText edtNomeTime, edtAnoFundacao;
     private Button btnSalvarTime;
@@ -20,20 +21,44 @@ public class TeamActivity extends AppCompatActivity {
 
         edtNomeTime = (EditText) findViewById(R.id.nomeTime);
         edtAnoFundacao = (EditText) findViewById(R.id.anoFundacao);
-        btnSalvarTime = (Button) findViewById(R.id.salvarJogadorBtn);
+        btnSalvarTime = (Button) findViewById(R.id.salvarTimeBtn);
 
         btnSalvarTime.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-              salvar();
+              salvarTime();
             }
         });
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         }
-    private void salvar(){
+    private void salvarTime(){
         String nomeTime = edtNomeTime.getText().toString();
         String anoFundacao = edtAnoFundacao.getText().toString();
+
+        Time time = new Time();
+        time.setNomeTime(nomeTime);
+        time.setAnoFundacao(anoFundacao);
+
+        TimeDAO.inserirTime(this, time);
+
+        this.finish();
+
     }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if(id == android.R.id.home) {
+            this.finish();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
