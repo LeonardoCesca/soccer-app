@@ -24,32 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-        lvTimes = findViewById(R.id.lvTimes);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this, FormularioActivity.class);
-                startActivity( i );
-            }
-        });
-
-        lvProdutos.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                excluir( (Produto) adapterView.getItemAtPosition(i)  );
-                return true;
-            }
-        });
-    }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
         criarJogadorBtn = (Button) findViewById(R.id.criarJogadorBtn);
 
         criarJogadorBtn.setOnClickListener(new View.OnClickListener() {
