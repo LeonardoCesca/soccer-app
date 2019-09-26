@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button criarJogadorBtn;
     private Button criarTimeBtn;
-    private ListView lvTimes;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
     }
 
 

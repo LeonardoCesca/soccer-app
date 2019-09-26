@@ -19,7 +19,7 @@ public class Banco extends SQLiteOpenHelper {
                 " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , "  +
                 " nome TEXT ," +
                 " sobrenome TEXT ," +
-                " numero_camiseta INT);" );
+                " numero_camiseta TEXT );" );
 
         sqLiteDatabase.execSQL( "CREATE TABLE IF NOT EXISTS times ( " +
                 " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , "  +

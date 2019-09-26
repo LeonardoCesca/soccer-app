@@ -5,6 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,8 +37,8 @@ public class TimeDAO {
 
     public static void excluirTime(Context contexto, int idTime){
         Banco banco = new Banco(contexto);
-        SQLiteDatabase db = banco.getWritableDatabase();
-        db.delete("times", " id = " + idTime,null);
+        SQLiteDatabase database = banco.getWritableDatabase();
+        database.delete("times", " id = " + idTime,null);
     }
 
     public static List<Time> getTime(Context contexto){
@@ -60,10 +62,10 @@ public class TimeDAO {
 
     public static Time getTimeId(Context contexto, int idTime){
         Banco banco = new Banco(contexto);
-        SQLiteDatabase db = banco.getReadableDatabase();
+        SQLiteDatabase database = banco.getReadableDatabase();
 
         String sql = "SELECT * FROM times WHERE id = " + idTime;
-        Cursor cursor = db.rawQuery( sql ,null);
+        Cursor cursor = database.rawQuery( sql ,null);
 
         if ( cursor.getCount() > 0 ){
             cursor.moveToFirst();
