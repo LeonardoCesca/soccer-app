@@ -16,12 +16,17 @@ public class Banco extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL( "CREATE TABLE IF NOT EXISTS jogadores ( " +
-                " id INTEGER PRIMARY KEY NOT NULL AUTOINCREMENT ," +
+                " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , "  +
                 " nome TEXT ," +
-                " sobrenome TEXT" +
-                " numero_camiseta INTEGER );"
-        );
+                " sobrenome TEXT ," +
+                " numero_camiseta INT);" );
+
+        sqLiteDatabase.execSQL( "CREATE TABLE IF NOT EXISTS times ( " +
+                " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , "  +
+                " nomeTime TEXT ," +
+                " anoFundacao TEXT );" );
     }
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
