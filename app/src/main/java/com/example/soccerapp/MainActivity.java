@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button criarJogadorBtn;
     private Button criarTimeBtn;
+    private Button mostrarTimeBtn;
 
 
     @Override
@@ -40,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, TeamActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        mostrarTimeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ListaActivity.class);
                 startActivity(intent);
             }
         });

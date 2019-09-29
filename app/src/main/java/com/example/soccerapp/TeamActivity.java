@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.view.MenuItem;
 
-public class  TeamActivity extends AppCompatActivity {
+public class TeamActivity extends AppCompatActivity {
 
     private EditText edtNomeTime, edtAnoFundacao;
     private Button btnSalvarTime;

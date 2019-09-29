@@ -13,13 +13,13 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class AdapterProduto extends BaseAdapter {
+public class AdapterTime extends BaseAdapter {
 
     private List<Time> listaTimes;
     private Context context;
     private LayoutInflater inflater;
 
-    public AdapterProduto(Context context, List<Time> listaTimes){
+    public AdapterTime(Context context, List<Time> listaTimes){
         this.context = context;
         this.listaTimes = listaTimes;
         this.inflater = LayoutInflater.from( context );
@@ -46,12 +46,12 @@ public class AdapterProduto extends BaseAdapter {
         ItemSuporte item;
 
         if ( view == null){
-            view = inflater.inflate(R.layout.layout_lista, null);
+            view = inflater.inflate(R.layout.activity_lista, null);
             item = new ItemSuporte();
             item.tvId = (TextView) view.findViewById(R.id.tvListaId);
             item.tvNomeTime = (TextView) view.findViewById(R.id.tvListaNomeTime);
             item.tvAnoFundacao = (TextView) view.findViewById(R.id.tvListaAnoFundacao);
-            item.layout = (LinearLayout) view.findViewById(R.id.layout);
+            item.layout = (LinearLayout) view.findViewById(R.id.layoutTime);
             view.setTag( item );
         }else {
             item = (ItemSuporte) view.getTag();

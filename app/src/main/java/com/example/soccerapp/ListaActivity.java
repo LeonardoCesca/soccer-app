@@ -25,31 +25,31 @@ public class ListaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista);
 
         lvTimes = findViewById(R.id.lvTimes);
-
-        lvTimes.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-            @Override
-            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
-                excluir((Time)adapterView.getItemAtPosition(i));
-                return false;
-            }
-        });
+//
+//        lvTimes.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                excluir((Time)adapterView.getItemAtPosition(i));
+//                return false;
+//            }
+//        });
 
 
     }
 
-    private void excluir(final Time nomeTime){
-        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
-        alerta.setTitle("Excluir Time");
-        alerta.setMessage("Voce deseja excluir o time " + nomeTime.getNomeTime()+"?");
-        alerta.setNeutralButton("Cancelar", null);
-        alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                TimeDAO.excluirTime(TeamActivity.this, nomeTime.getId());
-            }
-        });
-        alerta.show();
-        }
+//    private void excluir(final Time nomeTime){
+//        AlertDialog.Builder alerta = new AlertDialog.Builder(this);
+//        alerta.setTitle("Excluir Time");
+//        alerta.setMessage("Voce deseja excluir o time " + nomeTime.getNomeTime()+"?");
+//        alerta.setNeutralButton("Cancelar", null);
+//        alerta.setPositiveButton("Sim", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialogInterface, int i) {
+//                TimeDAO.excluirTime(TimeDAO.this, nomeTime.getId());
+//            }
+//        });
+//        alerta.show();
+//        }
 
     @Override
     protected void onStart() {
@@ -73,7 +73,7 @@ public class ListaActivity extends AppCompatActivity {
             lvTimes.setEnabled(true);
         }
 
-        AdapterProduto adapterProduto = new AdapterProduto(this, listaTimes);
+        AdapterTime adapterTime = new AdapterTime(this, listaTimes);
 }
 
 
