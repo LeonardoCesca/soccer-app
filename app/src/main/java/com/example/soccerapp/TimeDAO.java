@@ -46,7 +46,7 @@ public class TimeDAO {
         Banco banco = new Banco(contexto);
         SQLiteDatabase db = banco.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM times ORDER BY nome",null);
+        Cursor cursor = db.rawQuery("SELECT * FROM times ORDER BY nomeTime",null);
         if ( cursor.getCount() > 0 ){
             cursor.moveToFirst();
             do{

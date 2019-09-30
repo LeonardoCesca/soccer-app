@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         criarJogadorBtn = (Button) findViewById(R.id.criarJogadorBtn);
+        mostrarTimeBtn = (Button) findViewById(R.id.mostrarTimeBtn);
+
 
         criarJogadorBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,6 +3,7 @@ package com.example.soccerapp;
 public class Jogador {
 
     private int id;
+    private int idTime;
     private String nome;
     private String apelido;
     private String numeroCamiseta;
@@ -14,6 +15,14 @@ public class Jogador {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getIdTime() {
+        return idTime;
+    }
+
+    public void setIdTime(int idTime) {
+        this.idTime = idTime;
     }
 
     public String getNome() {

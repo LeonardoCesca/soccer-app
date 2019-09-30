@@ -6,7 +6,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class Banco extends SQLiteOpenHelper {
 
-    private static final int VERSAO = 1;
+    private static final int VERSAO = 2;
     private static final String NOME = "SoccerApp";
 
     public Banco(Context contexto){
@@ -17,6 +17,7 @@ public class Banco extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL( "CREATE TABLE IF NOT EXISTS jogadores ( " +
                 " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT , "  +
+                " idTime INTEGER ," +
                 " nome TEXT ," +
                 " sobrenome TEXT ," +
                 " numero_camiseta TEXT );" );
@@ -30,6 +31,6 @@ public class Banco extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        sqLiteDatabase.execSQL( "DROP TABLE jogadores");
     }
 }
