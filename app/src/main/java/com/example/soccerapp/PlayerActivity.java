@@ -47,10 +47,13 @@ public class PlayerActivity extends AppCompatActivity {
         String apelidoJogador = edtApelido.getText().toString();
         String numCamiseta = edtNumCamiseta.getText().toString();
 
+        Time time = (Time) spinnerTimes.getSelectedItem();
+
         Jogador jogador = new Jogador();
         jogador.setNome(nomeJogador);
         jogador.setApelido(apelidoJogador);
         jogador.setNumeroCamiseta(numCamiseta);
+        jogador.setIdTime(time.getId());
 
         JogadorDAO.inserirJogador(this, jogador);
 
@@ -82,7 +85,6 @@ public class PlayerActivity extends AppCompatActivity {
             Time fake = new Time();
             fake.setNomeTime("Selecione...");
             listaTimes.add(0,fake);
-
 
         AdapterTime adapterTime = new AdapterTime(this, listaTimes);
         spinnerTimes.setAdapter(adapterTime);

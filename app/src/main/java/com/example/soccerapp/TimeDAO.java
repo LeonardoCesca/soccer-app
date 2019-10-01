@@ -53,7 +53,7 @@ public class TimeDAO {
                 Time time = new Time();
                 time.setId(  cursor.getInt( 0 ) );
                 time.setNomeTime( cursor.getString( 1 ) );
-                time.setAnoFundacao( cursor.getString( 1 ) );
+                time.setAnoFundacao( cursor.getString( 2 ) );
                 listaTime.add( time );
             } while ( cursor.moveToNext() );
         }
