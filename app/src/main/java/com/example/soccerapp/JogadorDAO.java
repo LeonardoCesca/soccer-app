@@ -51,9 +51,9 @@ public class JogadorDAO {
             do{
                 Jogador jogador = new Jogador();
                 jogador.setId(  cursor.getInt( 0 ) );
-                jogador.setNome( cursor.getString( 1 ) );
-                jogador.setApelido( cursor.getString( 1 ) );
-                jogador.setNumeroCamiseta( cursor.getString(   1) );
+                jogador.setNome( cursor.getString( 2 ) );
+                jogador.setApelido( cursor.getString( 3 ) );
+                jogador.setNumeroCamiseta( cursor.getString(   4) );
                 listaJogadores.add( jogador );
             } while ( cursor.moveToNext() );
         }

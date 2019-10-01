@@ -8,11 +8,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+
+import java.util.List;
 
 public class PlayerActivity extends AppCompatActivity {
 
     private EditText edtNome, edtApelido, edtNumCamiseta;
     private Button btnSalvarJogador;
+    private Spinner spinnerTimes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +27,7 @@ public class PlayerActivity extends AppCompatActivity {
         edtApelido = (EditText) findViewById(R.id.apelidoJogador);
         edtNumCamiseta = (EditText) findViewById(R.id.numeroCamiseta);
         btnSalvarJogador = (Button) findViewById(R.id.salvarJogadorBtn);
+        spinnerTimes = (Spinner) findViewById(R.id.spinnerTimes);
 
         btnSalvarJogador.setOnClickListener(new View.OnClickListener() {
 
@@ -64,4 +69,23 @@ public class PlayerActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        carregarListaSpinner();
+    }
+
+    private void carregarListaSpinner(){
+        List<Time> listaTimes = TimeDAO.getTime(this);
+
+            Time fake = new Time();
+            fake.setNomeTime("Selecione...");
+            listaTimes.add(0,fake);
+
+
+        AdapterTime adapterTime = new AdapterTime(this, listaTimes);
+        spinnerTimes.setAdapter(adapterTime);
+    }
 }
+
