@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SoccerApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="SelecioneTime">Selecione o time</string>
+
+    <string-array name="times">
+        <item>Gremio</item>
+        <item>Inter</item>
+    </string-array>
+</resources>
